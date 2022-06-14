@@ -37,6 +37,12 @@
   text-decoration: none;
 }
 
+.displayTopic {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
 .ArticlesList {
   list-style: none;
   margin: 0;
@@ -47,7 +53,6 @@
   margin-inline: auto;
 }
 .ArticleCard {
-  margin-top: 1rem;
   margin-bottom: 1rem;
   background-color: white;
   border-style: solid;
