@@ -4,12 +4,16 @@ import ArticleCard from "./ArticleCard";
 
 const ArticlesList = () => {
   const [articlesList, setArticlesList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getArticles().then(({ articles }) => {
       setArticlesList(articles);
+      setIsLoading(false);
     });
   }, []);
+
+  if (isLoading) return <p className="loadingMsg">Fetching Data...</p>;
 
   return (
     <>
