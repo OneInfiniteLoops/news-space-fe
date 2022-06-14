@@ -1,5 +1,3 @@
-const dayjs = require("dayjs");
-
 const ArticleCard = ({ article }) => {
   return (
     <li className="ArticleCard">
