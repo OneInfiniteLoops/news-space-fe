@@ -115,3 +115,12 @@
   box-shadow: 5px 5px;
   padding: 1rem;
 }
+
+.articleCardTopic {
+  background-color: darkgrey;
+  color: white;
+  margin-right: 80%;
+  font-weight: bolder;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
