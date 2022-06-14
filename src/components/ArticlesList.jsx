@@ -19,6 +19,7 @@ const ArticlesList = () => {
 
   return (
     <>
+      <h2 className="displayTopic">{topic ? `/${topic}` : "/all"}</h2>
       <ul className="ArticlesList">
         {articlesList.map((article) => {
           return <ArticleCard key={article.article_id} article={article} />;
