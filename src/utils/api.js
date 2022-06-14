@@ -11,3 +11,9 @@ export const getArticles = (topicParam) => {
       return res.data;
     });
 };
+
+export const getArticleByID = (article_id) => {
+  return newsApi.get(`/articles/${article_id}`).then((res) => {
+    return res.data;
+  });
+};
