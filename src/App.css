@@ -20,6 +20,23 @@
   border-width: 1px;
 }
 
+.navBarLink {
+  margin: 0px 5px;
+  font-weight: bolder;
+  padding: 1rem;
+  color: grey;
+  text-decoration: none;
+}
+
+.navBarLink:hover {
+  margin: 0px 5px;
+  font-weight: bolder;
+  padding: 1rem;
+  color: black;
+  background-color: aquamarine;
+  text-decoration: none;
+}
+
 .ArticlesList {
   list-style: none;
   margin: 0;
