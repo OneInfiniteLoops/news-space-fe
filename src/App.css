@@ -52,7 +52,7 @@
   width: 90%;
   margin-inline: auto;
 }
-.ArticleCard {
+.ArticlesListItem {
   margin-bottom: 1rem;
   background-color: white;
   border-style: solid;
@@ -61,12 +61,21 @@
   padding: 1rem;
 }
 
-.ArticleCard:hover {
+.ArticlesListItem:hover {
   box-shadow: 8px 8px;
   background-color: aquamarine;
 }
 
-.articleCardTopic {
+.articleLink {
+  color: black;
+  text-decoration: none;
+}
+
+.articleLink:hover {
+  text-decoration: underline;
+}
+
+.articlesListItemTopic {
   background-color: darkgrey;
   color: white;
   margin-right: 80%;
@@ -86,4 +95,23 @@
   border-style: solid;
   border-width: 1px;
   box-shadow: 5px 5px;
+}
+
+.articlePage {
+  background-color: bisque;
+}
+
+.ArticleCard {
+  list-style: none;
+  margin: 1rem;
+  padding: 1rem;
+  align-items: center;
+  max-width: 1100px;
+  width: 90%;
+  margin-inline: auto;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 5px 5px;
+  padding: 1rem;
 }
