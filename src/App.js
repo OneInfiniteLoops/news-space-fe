@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
+import EachArticle from "./pages/EachArticle";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:topic" element={<Home />} />
+          <Route path="/articles/:article_id" element={<EachArticle />} />
         </Routes>
       </div>
     </BrowserRouter>
