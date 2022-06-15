@@ -9,5 +9,19 @@ export const getArticles = (topicParam) => {
     .get("/articles", { params: { topic: topicParam } })
     .then((res) => {
       return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
+export const getArticleByID = (article_id) => {
+  return newsApi
+    .get(`/articles/${article_id}`)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
     });
 };
