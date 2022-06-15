@@ -5,16 +5,22 @@ import CommentCard from "./CommentCard";
 const CommentsList = ({ article_id }) => {
   const [commentsList, setCommentsList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  const [hasNoComments, setHasNoComments] = useState(false);
 
   useEffect(() => {
     getCommentsByArticleID(article_id).then(({ comments }) => {
-      setCommentsList(comments);
-      setIsLoading(false);
+      if (comments) {
+        setCommentsList(comments);
+        setIsLoading(false);
+      } else if (!comments) {
+        setHasNoComments(true);
+        setIsLoading(false);
+      }
     });
   }, [article_id]);
 
-  if (hasError) return <p className="errorMsg"> No Comments Found. </p>;
+  if (hasNoComments)
+    return <p className="errorMsg"> No Comments Posted Yet. </p>;
   if (isLoading) return <p className="loadingMsg">Fetching Comments...</p>;
 
   return (
