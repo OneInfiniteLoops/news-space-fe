@@ -7,14 +7,21 @@ const ArticlesList = () => {
   const { topic } = useParams();
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     getArticles(topic).then(({ articles }) => {
-      setArticlesList(articles);
-      setIsLoading(false);
+      if (articles) {
+        setArticlesList(articles);
+        setIsLoading(false);
+      } else if (!articles) {
+        setHasError(true);
+        setIsLoading(false);
+      }
     });
   }, [topic]);
 
+  if (hasError) return <p className="errorMsg"> No Articles Found. </p>;
   if (isLoading) return <p className="loadingMsg">Fetching Data...</p>;
 
   return (
