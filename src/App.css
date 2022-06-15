@@ -137,3 +137,23 @@
   padding: 5px 10px;
   border-radius: 20px;
 }
+
+.votebutton {
+  margin-right: 2rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 2px 2px;
+}
+
+.votebutton:hover {
+  margin-right: 2rem;
+  padding: 0.5rem;
+  background-color: aquamarine;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 2px 2px;
+}
