@@ -13,7 +13,12 @@ export const getArticles = (topicParam) => {
 };
 
 export const getArticleByID = (article_id) => {
-  return newsApi.get(`/articles/${article_id}`).then((res) => {
-    return res.data;
-  });
+  return newsApi
+    .get(`/articles/${article_id}`)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
 };
