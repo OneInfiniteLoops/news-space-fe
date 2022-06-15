@@ -37,7 +37,7 @@
   text-decoration: none;
 }
 
-.displayTopic {
+.display-Topic {
   margin-top: 2rem;
   text-align: center;
   padding: 1rem;
@@ -129,6 +129,12 @@
   padding: 1rem;
 }
 
+.vote-counter-wrapper {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
 .articleCardTopic {
   background-color: darkgrey;
   color: white;
@@ -136,4 +142,24 @@
   font-weight: bolder;
   padding: 5px 10px;
   border-radius: 20px;
+}
+
+.votebutton {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 3px 3px;
+}
+
+.votebutton:hover {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  background-color: aquamarine;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 3px 3px;
 }

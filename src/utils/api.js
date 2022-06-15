@@ -25,3 +25,14 @@ export const getArticleByID = (article_id) => {
       return err;
     });
 };
+
+export const patchVotesOfArticleByID = (article_id, inc_votes) => {
+  return newsApi
+    .patch(`/articles/${article_id}`, { inc_votes })
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
