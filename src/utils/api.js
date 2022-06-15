@@ -9,6 +9,9 @@ export const getArticles = (topicParam) => {
     .get("/articles", { params: { topic: topicParam } })
     .then((res) => {
       return res.data;
+    })
+    .catch((err) => {
+      return err;
     });
 };
 
