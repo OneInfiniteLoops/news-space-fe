@@ -6,14 +6,14 @@ const VoteCounter = ({ votes, article_id }) => {
 
   const handleClickUpVote = () => {
     setVoteChange((currVotes) => currVotes + 1);
-    patchVotesOfArticleByID(article_id, voteChange + 1).catch(() => {
+    patchVotesOfArticleByID(article_id, 1).catch(() => {
       setVoteChange((currVotes) => currVotes - 1);
     });
   };
 
   const handleClickDownVote = () => {
     setVoteChange((currVotes) => currVotes - 1);
-    patchVotesOfArticleByID(article_id, voteChange - 1).catch(() => {
+    patchVotesOfArticleByID(article_id, -1).catch(() => {
       setVoteChange((currVotes) => currVotes + 1);
     });
   };
