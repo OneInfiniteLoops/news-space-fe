@@ -26,7 +26,7 @@ const ArticlesList = () => {
 
   return (
     <>
-      <h2 className="displayTopic">{topic ? `/${topic}` : "/all"}</h2>
+      <h2 className="display-Topic">{topic ? `/${topic}` : "/all"}</h2>
       <ul className="ArticlesList">
         {articlesList.map((article) => {
           return (
