@@ -20,7 +20,7 @@ const CommentsList = ({ article_id }) => {
   }, [article_id]);
 
   if (hasNoComments)
-    return <p className="errorMsg"> No Comments Posted Yet. </p>;
+    return <p className="noCommentMsg"> No Comments Posted Yet. </p>;
   if (isLoading) return <p className="loadingMsg">Fetching Comments...</p>;
 
   return (
