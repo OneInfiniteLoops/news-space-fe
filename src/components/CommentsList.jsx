@@ -15,7 +15,7 @@ const CommentsList = ({ article_id }) => {
   }, [article_id]);
 
   if (hasError) return <p className="errorMsg"> No Comments Found. </p>;
-  if (isLoading) return <p className="loadingMsg">Fetching Data...</p>;
+  if (isLoading) return <p className="loadingMsg">Fetching Comments...</p>;
 
   return (
     <div className="comment-section">
