@@ -19,7 +19,7 @@ const CommentsList = ({ article_id }) => {
 
   return (
     <div className="comment-section">
-      <h2>Comment Section</h2>
+      <h2 className="comment-section-heading">Comment Section/</h2>
       <ul className="comments-list">
         {commentsList.map((comment) => {
           return <CommentCard key={comment.comment_id} comment={comment} />;
