@@ -21,20 +21,22 @@ const VoteCounter = ({ votes, article_id }) => {
   return (
     <>
       <p>{votes + voteChange} votes</p>
-      <button
-        className="votebutton"
-        onClick={handleClickUpVote}
-        disabled={voteChange > 0}
-      >
-        👍 upvote
-      </button>
-      <button
-        className="votebutton"
-        onClick={handleClickDownVote}
-        disabled={voteChange < 0}
-      >
-        👎 downvote
-      </button>
+      <div className="vote-counter-wrapper">
+        <button
+          className="votebutton"
+          onClick={handleClickUpVote}
+          disabled={voteChange > 0}
+        >
+          👍 upvote
+        </button>
+        <button
+          className="votebutton"
+          onClick={handleClickDownVote}
+          disabled={voteChange < 0}
+        >
+          👎 downvote
+        </button>
+      </div>
     </>
   );
 };
