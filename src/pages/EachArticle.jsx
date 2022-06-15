@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ArticleCard from "../components/ArticleCard";
 import { getArticleByID } from "../utils/api";
+import CommentsList from "../components/CommentsList";
 
 const EachArticle = () => {
   const { article_id } = useParams();
@@ -28,6 +29,7 @@ const EachArticle = () => {
   return (
     <div className="articlePage">
       <ArticleCard key={article.article_id} article={article} />
+      <CommentsList article_id={article_id} />
     </div>
   );
 };
