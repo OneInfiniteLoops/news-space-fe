@@ -23,7 +23,7 @@ const ArticlesList = () => {
       <ul className="ArticlesList">
         {articlesList.map((article) => {
           return (
-            <>
+            <div key={article.article_id}>
               <li className="ArticlesListItem">
                 <p className="articlesListItemTopic">{article.topic}</p>
                 <h2 className="articlesListItemTitle">
@@ -45,7 +45,7 @@ const ArticlesList = () => {
                   {article.comment_count} comments
                 </p>
               </li>
-            </>
+            </div>
           );
         })}
       </ul>
