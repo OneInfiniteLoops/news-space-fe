@@ -196,6 +196,10 @@
   box-shadow: 5px 5px;
 }
 
+.comment-form textarea {
+  width: 90%;
+}
+
 .submit-button {
   margin-right: 1rem;
   background-color: white;
