@@ -23,7 +23,7 @@ const UsersList = () => {
 
   return (
     <>
-      <h2>Profile</h2>
+      <h2 className="profile-heading">Profile</h2>
       <ul className="UsersList">
         {usersList.map((user) => {
           return (
