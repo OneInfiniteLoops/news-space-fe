@@ -47,3 +47,14 @@ export const getCommentsByArticleID = (article_id) => {
       return err;
     });
 };
+
+export const getUsers = () => {
+  return newsApi
+    .get("/users")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
