@@ -15,6 +15,9 @@ const NavBar = () => {
       <Link className="navBarLink" to="/cooking">
         Cooking
       </Link>
+      <Link className="navBarLink" to="/users">
+        Switch User
+      </Link>
     </nav>
   );
 };
