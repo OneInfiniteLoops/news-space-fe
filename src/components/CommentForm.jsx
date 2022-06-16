@@ -27,7 +27,7 @@ const CommentForm = ({ article_id, setCommentsList }) => {
     postCommentByArticleID(article_id, newComment).then(({ postedComment }) => {
       postedComment["author"] = postedComment["username"];
       setCommentsList((currCommentsList) => {
-        return [postedComment, ...currCommentsList];
+        return [...currCommentsList, postedComment];
       });
       setPostSuccess(true);
     });
@@ -52,7 +52,7 @@ const CommentForm = ({ article_id, setCommentsList }) => {
   return (
     <div className="comment-form">
       <form onSubmit={handleSubmit}>
-        <textarea
+        <input
           type="text"
           name="body"
           onChange={handlePostInputs}
@@ -61,7 +61,7 @@ const CommentForm = ({ article_id, setCommentsList }) => {
           required
           cols="30"
           rows="10"
-        ></textarea>
+        ></input>
         <button className="submit-button" disabled={isSubmitted}>
           Submit
         </button>
