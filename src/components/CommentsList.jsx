@@ -26,8 +26,8 @@ const CommentsList = ({ article_id }) => {
 
   return (
     <div className="comment-section">
-      <h2 className="comment-section-heading">Comment Section/</h2>
-      <CommentForm article_id={article_id} />
+      <h2 className="comment-section-heading">Comment Section</h2>
+      <CommentForm article_id={article_id} setCommentsList={setCommentsList} />
       <ul className="comments-list">
         {commentsList.map((comment) => {
           return <CommentCard key={comment.comment_id} comment={comment} />;
