@@ -50,14 +50,16 @@ const CommentForm = ({ article_id, setCommentsList }) => {
   return (
     <div className="comment-form">
       <form onSubmit={handleSubmit}>
-        <input
+        <textarea
           type="text"
           name="body"
           onChange={handlePostInputs}
           value={newComment.body}
           placeholder="Post a comment"
           required
-        />
+          cols="30"
+          rows="10"
+        ></textarea>
         <button className="submit-button" disabled={isSubmitted}>
           Submit
         </button>
