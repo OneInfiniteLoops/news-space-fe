@@ -37,21 +37,21 @@ const CommentForm = ({ article_id }) => {
   }
 
   return (
-    <>
+    <div className="comment-form">
       <form onSubmit={handleSubmit}>
-        <label>Post a comment</label>
         <input
           type="text"
           name="body"
           onChange={handlePostInputs}
           value={newComment.body}
+          placeholder="Post a comment"
           required
         />
         <button className="submit-button" disabled={isSubmitted}>
           Submit
         </button>
       </form>
-    </>
+    </div>
   );
 };
 export default CommentForm;
