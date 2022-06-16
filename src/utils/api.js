@@ -58,3 +58,14 @@ export const getUsers = () => {
       return err;
     });
 };
+
+export const postCommentByArticleID = (article_id, comment) => {
+  return newsApi
+    .post(`/articles/${article_id}/comments`, comment)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
