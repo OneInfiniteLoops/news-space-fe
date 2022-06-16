@@ -1,8 +1,9 @@
 import { postCommentByArticleID } from "../utils/api";
 import { useState, useContext } from "react";
 import { UserContext } from "../contexts/User";
+import CommentCard from "./CommentCard";
 
-const CommentForm = ({ article_id }) => {
+const CommentForm = ({ article_id, setCommentsList }) => {
   const { user } = useContext(UserContext);
   const [newComment, setNewComment] = useState({
     username: "",
@@ -23,15 +24,25 @@ const CommentForm = ({ article_id }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsSubmitted(true);
-    postCommentByArticleID(article_id, newComment).then((res) => {
+    postCommentByArticleID(article_id, newComment).then(({ postedComment }) => {
+      postedComment["author"] = postedComment["username"];
+      setCommentsList((currCommentsList) => {
+        return [postedComment, ...currCommentsList];
+      });
       setPostSuccess(true);
     });
   };
 
-  if (postSuccess === true) {
+  if (!user) {
+    return (
+      <p className="comment-form">Please sign in to join the conversation.</p>
+    );
+  }
+
+  if (user && postSuccess === true) {
     return (
       <>
-        <h2>Comment Posted Successfully!</h2>
+        <h2 className="postMsg">Comment Posted Successfully!</h2>
       </>
     );
   }
