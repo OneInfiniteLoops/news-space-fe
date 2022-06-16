@@ -3,11 +3,11 @@ import { UserContext } from "../contexts/User";
 
 const Header = () => {
   const { user, setUser } = useContext(UserContext);
-  console.log(user);
 
   return (
     <div className="Header">
-      <h1>NewsSpace/ {user}</h1>
+      <h1>NewsSpace/</h1>
+      <p>Hello {user}!</p>
     </div>
   );
 };
