@@ -9,7 +9,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "./contexts/User";
 
 function App() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState("jessjelly");
 
   return (
     <BrowserRouter>
