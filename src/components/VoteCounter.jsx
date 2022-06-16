@@ -20,7 +20,7 @@ const VoteCounter = ({ votes, article_id }) => {
 
   return (
     <>
-      <p>{votes + voteChange} votes</p>
+      <p>👍 {votes + voteChange} votes</p>
       <div className="vote-counter-wrapper">
         <button
           className="votebutton"

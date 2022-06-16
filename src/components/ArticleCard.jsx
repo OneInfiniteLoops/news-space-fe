@@ -10,7 +10,9 @@ const ArticleCard = ({ article }) => {
         <p className="articleCardCreatedAt">Created at: {article.created_at}</p>
         <p className="articleCardBody">{article.body}</p>
         <VoteCounter votes={article.votes} article_id={article.article_id} />
-        <p className="articlesCardComments">{article.comment_count} comments</p>
+        <p className="articlesCardComments">
+          💬 {article.comment_count} comments
+        </p>
       </li>
     </>
   );

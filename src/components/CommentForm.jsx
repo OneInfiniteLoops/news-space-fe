@@ -35,7 +35,9 @@ const CommentForm = ({ article_id, setCommentsList }) => {
 
   if (!user) {
     return (
-      <p className="comment-form">Please sign in to join the conversation.</p>
+      <p className="comment-form">
+        💬 Please sign in to join the conversation.
+      </p>
     );
   }
 

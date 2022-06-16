@@ -47,9 +47,11 @@ const ArticlesList = () => {
                 <p className="articlesListItemCreatedAt">
                   Created at: {article.created_at}
                 </p>
-                <p className="articlesListItemVotes">{article.votes} votes</p>
+                <p className="articlesListItemVotes">
+                  👍 {article.votes} votes
+                </p>
                 <p className="articlesListItemComments">
-                  {article.comment_count} comments
+                  💬 {article.comment_count} comments
                 </p>
               </li>
             </div>
