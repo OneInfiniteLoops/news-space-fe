@@ -138,8 +138,10 @@
   background-color: darkgrey;
   color: white;
   margin-right: 80%;
+  text-align: center;
+  min-width: 5rem;
   font-weight: bolder;
-  padding: 1px 7px;
+  padding: 3px 3px;
   border-radius: 20px;
   font-size: smaller;
 }
@@ -210,11 +212,14 @@
 
 .articleCardTopic {
   background-color: darkgrey;
+  text-align: center;
+  min-width: 5rem;
   color: white;
   margin-right: 80%;
   font-weight: bolder;
-  padding: 5px 10px;
+  padding: 3px 3px;
   border-radius: 20px;
+  font-size: smaller;
 }
 
 .votebutton {
