@@ -43,6 +43,11 @@
   padding: 1rem;
 }
 
+.sort-list-panel {
+  text-align: center;
+  font-weight: bolder;
+}
+
 .sortby-order-buttons {
   margin-right: 1rem;
   padding: 0.5rem;

@@ -58,23 +58,25 @@ const ArticlesList = () => {
   return (
     <>
       <h2 className="display-Topic">{topic ? `/${topic}` : "/all"}</h2>
-      Sort by:
-      <button className="sortby-order-buttons" onClick={handleNewestClick}>
-        Date
-      </button>
-      <button
-        className="sortby-order-buttons"
-        onClick={handleMostDiscussedClick}
-      >
-        Comments
-      </button>
-      <button className="sortby-order-buttons" onClick={handleMostVotesClick}>
-        Votes
-      </button>
-      Order:
-      <button className="sortby-order-buttons" onClick={handleOrderClick}>
-        {listOrder === "desc" ? "Descending" : "Ascending"}
-      </button>
+      <div className="sort-list-panel">
+        Sort by :
+        <button className="sortby-order-buttons" onClick={handleNewestClick}>
+          Date
+        </button>
+        <button
+          className="sortby-order-buttons"
+          onClick={handleMostDiscussedClick}
+        >
+          Comments
+        </button>
+        <button className="sortby-order-buttons" onClick={handleMostVotesClick}>
+          Votes
+        </button>
+        Order :
+        <button className="sortby-order-buttons" onClick={handleOrderClick}>
+          {listOrder === "desc" ? "Descending" : "Ascending"}
+        </button>
+      </div>
       <ul className="ArticlesList">
         {articlesList.map((article) => {
           return (
