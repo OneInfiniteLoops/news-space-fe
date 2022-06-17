@@ -271,6 +271,26 @@
   box-shadow: 5px 5px;
 }
 
+.delete-button {
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 3px 3px;
+}
+
+.delete-button:hover {
+  margin-right: 1rem;
+  background-color: aquamarine;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 3px 3px;
+}
+
 .profile-heading {
   margin-top: 2rem;
   text-align: center;
