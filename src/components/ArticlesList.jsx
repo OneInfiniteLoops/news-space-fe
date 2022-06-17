@@ -59,11 +59,20 @@ const ArticlesList = () => {
     <>
       <h2 className="display-Topic">{topic ? `/${topic}` : "/all"}</h2>
       Sort by:
-      <button onClick={handleNewestClick}>Date</button>
-      <button onClick={handleMostDiscussedClick}>Comments</button>
-      <button onClick={handleMostVotesClick}>Votes</button>
+      <button className="sortby-order-buttons" onClick={handleNewestClick}>
+        Date
+      </button>
+      <button
+        className="sortby-order-buttons"
+        onClick={handleMostDiscussedClick}
+      >
+        Comments
+      </button>
+      <button className="sortby-order-buttons" onClick={handleMostVotesClick}>
+        Votes
+      </button>
       Order:
-      <button onClick={handleOrderClick}>
+      <button className="sortby-order-buttons" onClick={handleOrderClick}>
         {listOrder === "desc" ? "Descending" : "Ascending"}
       </button>
       <ul className="ArticlesList">
