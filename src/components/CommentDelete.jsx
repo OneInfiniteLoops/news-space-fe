@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { deleteCommentByCommentID } from "../utils/api";
 import { UserContext } from "../contexts/User";
 

@@ -72,6 +72,8 @@ const ArticlesList = () => {
         <button className="sortby-order-buttons" onClick={handleMostVotesClick}>
           Votes
         </button>
+      </div>
+      <div className="sort-list-panel">
         Order :
         <button className="sortby-order-buttons" onClick={handleOrderClick}>
           {listOrder === "desc" ? "Descending" : "Ascending"}

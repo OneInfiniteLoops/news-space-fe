@@ -12,7 +12,39 @@
   border-width: 1px;
 }
 
+.switch-profiles-button {
+  position: absolute;
+  right: 3vw;
+  top: 5vw;
+  padding: 0.5rem;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 3px 3px;
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+
+.switch-profiles-button:hover {
+  position: absolute;
+  right: 3vw;
+  top: 5vw;
+  padding: 0.5rem;
+  background-color: aquamarine;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 3px 3px;
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+
 .NavBar {
+  text-align: center;
+  justify-content: space-evenly;
   margin: 0;
   padding: 1rem;
   background-color: white;
@@ -21,31 +53,36 @@
 }
 
 .navBarLink {
-  margin: 0px 5px;
+  text-align: center;
+  justify-content: space-evenly;
+  margin: 0px 0px;
   font-weight: bolder;
-  padding: 1rem;
+  padding: 0.5rem;
   color: grey;
   text-decoration: none;
 }
 
 .navBarLink:hover {
-  margin: 0px 5px;
+  text-align: center;
+  justify-content: space-evenly;
+  margin: 0px 0px;
   font-weight: bolder;
-  padding: 1rem;
+  padding: 0.5rem;
   color: black;
   background-color: aquamarine;
   text-decoration: none;
 }
 
 .display-Topic {
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .sort-list-panel {
   text-align: center;
   font-weight: bolder;
+  margin: 1rem;
 }
 
 .sortby-order-buttons {
@@ -105,8 +142,9 @@
   color: white;
   margin-right: 80%;
   font-weight: bolder;
-  padding: 5px 10px;
+  padding: 1px 7px;
   border-radius: 20px;
+  font-size: smaller;
 }
 
 .loadingMsg {
@@ -311,8 +349,6 @@
 }
 
 .switch-profile-panel button {
-  margin-right: 1rem;
-  padding: 0.5rem;
   background-color: white;
   border-style: solid;
   border-color: black;
@@ -321,7 +357,6 @@
 }
 
 .switch-profile-panel button:hover {
-  margin-right: 1rem;
   background-color: aquamarine;
   border-style: solid;
   border-color: black;

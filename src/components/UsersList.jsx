@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/User";
 const UsersList = () => {
   const [usersList, setUsersList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   useEffect(() => {
     getUsers().then(({ users }) => {
