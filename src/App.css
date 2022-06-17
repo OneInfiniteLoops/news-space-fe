@@ -265,7 +265,7 @@
   box-shadow: 5px 5px;
 }
 
-.username button {
+.switch-profile-panel button {
   margin-right: 1rem;
   padding: 0.5rem;
   background-color: white;
@@ -275,7 +275,7 @@
   box-shadow: 3px 3px;
 }
 
-.username button:hover {
+.switch-profile-panel button:hover {
   margin-right: 1rem;
   background-color: aquamarine;
   border-style: solid;
