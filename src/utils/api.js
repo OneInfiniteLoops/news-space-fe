@@ -47,3 +47,25 @@ export const getCommentsByArticleID = (article_id) => {
       return err;
     });
 };
+
+export const getUsers = () => {
+  return newsApi
+    .get("/users")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
+export const postCommentByArticleID = (article_id, comment) => {
+  return newsApi
+    .post(`/articles/${article_id}/comments`, comment)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};

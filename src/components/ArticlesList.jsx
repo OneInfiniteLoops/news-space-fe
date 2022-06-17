@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getArticles } from "../utils/api";
-import ArticleCard from "./ArticleCard";
 
 const ArticlesList = () => {
   const { topic } = useParams();
@@ -47,9 +46,11 @@ const ArticlesList = () => {
                 <p className="articlesListItemCreatedAt">
                   Created at: {article.created_at}
                 </p>
-                <p className="articlesListItemVotes">{article.votes} votes</p>
+                <p className="articlesListItemVotes">
+                  👍 {article.votes} votes
+                </p>
                 <p className="articlesListItemComments">
-                  {article.comment_count} comments
+                  💬 {article.comment_count} comments
                 </p>
               </li>
             </div>

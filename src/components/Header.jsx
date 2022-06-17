@@ -1,4 +1,14 @@
+import { useContext } from "react";
+import { UserContext } from "../contexts/User";
+
 const Header = () => {
-  return <h1 className="Header">NewsSpace/</h1>;
+  const { user, setUser } = useContext(UserContext);
+
+  return (
+    <div className="Header">
+      <h1>NewsSpace/</h1>
+      <p>Hello {user}!</p>
+    </div>
+  );
 };
 export default Header;
