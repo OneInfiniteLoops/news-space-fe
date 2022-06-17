@@ -1,15 +1,37 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useSearchParams } from "react-router-dom";
 import { getArticles } from "../utils/api";
 
 const ArticlesList = () => {
   const { topic } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
+  let query = searchParams.get("sort_by");
+
+  const handleNewestClick = (event) => {
+    event.preventDefault();
+    let query = { sort_by: "created_at" };
+    setSearchParams(query);
+  };
+
+  const handleMostDiscussedClick = (event) => {
+    event.preventDefault();
+    let query = { sort_by: "comment_count" };
+    setSearchParams(query);
+  };
+
+  const handleMostVotesClick = (event) => {
+    event.preventDefault();
+    let query = { sort_by: "votes" };
+    setSearchParams(query);
+  };
+
   useEffect(() => {
-    getArticles(topic).then(({ articles }) => {
+    getArticles(topic, query).then(({ articles }) => {
       if (articles) {
         setArticlesList(articles);
         setIsLoading(false);
@@ -18,7 +40,7 @@ const ArticlesList = () => {
         setIsLoading(false);
       }
     });
-  }, [topic]);
+  }, [topic, query]);
 
   if (hasError) return <p className="errorMsg"> No Articles Found. </p>;
   if (isLoading) return <p className="loadingMsg">Fetching Data...</p>;
@@ -26,6 +48,10 @@ const ArticlesList = () => {
   return (
     <>
       <h2 className="display-Topic">{topic ? `/${topic}` : "/all"}</h2>
+      Sort by:
+      <button onClick={handleNewestClick}>Newest</button>
+      <button onClick={handleMostDiscussedClick}>Most Discussed</button>
+      <button onClick={handleMostVotesClick}>Most Votes</button>
       <ul className="ArticlesList">
         {articlesList.map((article) => {
           return (
