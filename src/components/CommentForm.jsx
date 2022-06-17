@@ -1,7 +1,6 @@
 import { postCommentByArticleID } from "../utils/api";
 import { useState, useContext } from "react";
 import { UserContext } from "../contexts/User";
-import CommentCard from "./CommentCard";
 
 const CommentForm = ({ article_id, setCommentsList }) => {
   const { user } = useContext(UserContext);
@@ -23,6 +22,7 @@ const CommentForm = ({ article_id, setCommentsList }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setPostSuccess(false);
     setIsSubmitted(true);
     postCommentByArticleID(article_id, newComment).then(({ postedComment }) => {
       postedComment["author"] = postedComment["username"];
@@ -30,6 +30,7 @@ const CommentForm = ({ article_id, setCommentsList }) => {
         return [...currCommentsList, postedComment];
       });
       setPostSuccess(true);
+      setIsSubmitted(false);
     });
   };
 
@@ -43,25 +44,40 @@ const CommentForm = ({ article_id, setCommentsList }) => {
 
   if (user && postSuccess === true) {
     return (
-      <>
-        <h2 className="postMsg">Comment Posted Successfully!</h2>
-      </>
+      <div className="comment-form">
+        <h3 className="postMsg">Comment Posted Successfully!</h3>
+        <form onSubmit={handleSubmit}>
+          <textarea
+            type="text"
+            name="body"
+            onChange={handlePostInputs}
+            value={newComment.body}
+            placeholder="Post a comment here"
+            required
+            cols="60"
+            rows="3"
+          ></textarea>
+          <button className="submit-button" disabled={isSubmitted}>
+            Submit
+          </button>
+        </form>
+      </div>
     );
   }
 
   return (
     <div className="comment-form">
       <form onSubmit={handleSubmit}>
-        <input
+        <textarea
           type="text"
           name="body"
           onChange={handlePostInputs}
           value={newComment.body}
-          placeholder="Post a comment"
+          placeholder="Post a comment here"
           required
-          cols="30"
-          rows="10"
-        ></input>
+          cols="60"
+          rows="3"
+        ></textarea>
         <button className="submit-button" disabled={isSubmitted}>
           Submit
         </button>
