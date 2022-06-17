@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import EachArticle from "./pages/EachArticle";
 import SwitchUserProfile from "./pages/SwitchUserProfile";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { UserContext } from "./contexts/User";
 
 function App() {

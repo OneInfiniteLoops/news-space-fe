@@ -1,15 +1,47 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useSearchParams } from "react-router-dom";
 import { getArticles } from "../utils/api";
 
 const ArticlesList = () => {
   const { topic } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [listOrder, setListOrder] = useState("desc");
+
+  let query = searchParams.get("sort_by");
+
+  const handleNewestClick = (event) => {
+    event.preventDefault();
+    let query = { sort_by: "created_at" };
+    setSearchParams(query);
+  };
+
+  const handleMostDiscussedClick = (event) => {
+    event.preventDefault();
+    let query = { sort_by: "comment_count" };
+    setSearchParams(query);
+  };
+
+  const handleMostVotesClick = (event) => {
+    event.preventDefault();
+    let query = { sort_by: "votes" };
+    setSearchParams(query);
+  };
+
+  const handleOrderClick = (event) => {
+    event.preventDefault();
+    if (listOrder === "desc") {
+      setListOrder("asc");
+    } else if (listOrder === "asc") {
+      setListOrder("desc");
+    }
+  };
 
   useEffect(() => {
-    getArticles(topic).then(({ articles }) => {
+    getArticles(topic, query, listOrder).then(({ articles }) => {
       if (articles) {
         setArticlesList(articles);
         setIsLoading(false);
@@ -18,7 +50,7 @@ const ArticlesList = () => {
         setIsLoading(false);
       }
     });
-  }, [topic]);
+  }, [topic, query, listOrder]);
 
   if (hasError) return <p className="errorMsg"> No Articles Found. </p>;
   if (isLoading) return <p className="loadingMsg">Fetching Data...</p>;
@@ -26,6 +58,25 @@ const ArticlesList = () => {
   return (
     <>
       <h2 className="display-Topic">{topic ? `/${topic}` : "/all"}</h2>
+      <div className="sort-list-panel">
+        Sort by :
+        <button className="sortby-order-buttons" onClick={handleNewestClick}>
+          Date
+        </button>
+        <button
+          className="sortby-order-buttons"
+          onClick={handleMostDiscussedClick}
+        >
+          Comments
+        </button>
+        <button className="sortby-order-buttons" onClick={handleMostVotesClick}>
+          Votes
+        </button>
+        Order :
+        <button className="sortby-order-buttons" onClick={handleOrderClick}>
+          {listOrder === "desc" ? "Descending" : "Ascending"}
+        </button>
+      </div>
       <ul className="ArticlesList">
         {articlesList.map((article) => {
           return (

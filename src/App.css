@@ -43,6 +43,31 @@
   padding: 1rem;
 }
 
+.sort-list-panel {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.sortby-order-buttons {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 3px 3px;
+}
+
+.sortby-order-buttons:hover {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  background-color: aquamarine;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 3px 3px;
+}
+
 .ArticlesList {
   list-style: none;
   margin: 0;
