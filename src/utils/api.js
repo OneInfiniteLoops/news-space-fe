@@ -71,3 +71,14 @@ export const postCommentByArticleID = (article_id, comment) => {
       return err;
     });
 };
+
+export const deleteCommentByCommentID = (comment_id) => {
+  return newsApi
+    .delete(`/comments/${comment_id}`)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
