@@ -9,6 +9,7 @@ const ArticlesList = () => {
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [listOrder, setListOrder] = useState("desc");
 
   let query = searchParams.get("sort_by");
 
@@ -30,8 +31,17 @@ const ArticlesList = () => {
     setSearchParams(query);
   };
 
+  const handleOrderClick = (event) => {
+    event.preventDefault();
+    if (listOrder === "desc") {
+      setListOrder("asc");
+    } else if (listOrder === "asc") {
+      setListOrder("desc");
+    }
+  };
+
   useEffect(() => {
-    getArticles(topic, query).then(({ articles }) => {
+    getArticles(topic, query, listOrder).then(({ articles }) => {
       if (articles) {
         setArticlesList(articles);
         setIsLoading(false);
@@ -40,7 +50,7 @@ const ArticlesList = () => {
         setIsLoading(false);
       }
     });
-  }, [topic, query]);
+  }, [topic, query, listOrder]);
 
   if (hasError) return <p className="errorMsg"> No Articles Found. </p>;
   if (isLoading) return <p className="loadingMsg">Fetching Data...</p>;
@@ -49,9 +59,13 @@ const ArticlesList = () => {
     <>
       <h2 className="display-Topic">{topic ? `/${topic}` : "/all"}</h2>
       Sort by:
-      <button onClick={handleNewestClick}>Newest</button>
-      <button onClick={handleMostDiscussedClick}>Most Discussed</button>
-      <button onClick={handleMostVotesClick}>Most Votes</button>
+      <button onClick={handleNewestClick}>Date</button>
+      <button onClick={handleMostDiscussedClick}>Comments</button>
+      <button onClick={handleMostVotesClick}>Votes</button>
+      Order:
+      <button onClick={handleOrderClick}>
+        {listOrder === "desc" ? "Descending" : "Ascending"}
+      </button>
       <ul className="ArticlesList">
         {articlesList.map((article) => {
           return (
