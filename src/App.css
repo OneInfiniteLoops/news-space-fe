@@ -364,6 +364,7 @@
 .switch-profile-panel button {
   margin-inline: auto;
   background-color: white;
+  padding: 0.5rem;
   border-style: solid;
   border-color: black;
   border-width: 1px;
@@ -373,6 +374,7 @@
 .switch-profile-panel button:hover {
   margin-inline: auto;
   background-color: aquamarine;
+  padding: 0.5rem;
   border-style: solid;
   border-color: black;
   border-width: 1px;
@@ -388,6 +390,7 @@
   justify-content: center;
   margin: 0 auto;
   background-color: white;
+  padding: 0.5rem;
   border-style: solid;
   border-color: black;
   border-width: 1px;
@@ -398,6 +401,7 @@
   justify-content: center;
   margin: 0 auto;
   background-color: aquamarine;
+  padding: 0.5rem;
   border-style: solid;
   border-color: black;
   border-width: 1px;
