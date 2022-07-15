@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# NewsSpace App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The NewsSpace App is a front-end application for users to interact with the News API via a user-friendly UI.
 
-## Available Scripts
+## Link to deployed version
 
-In the project directory, you can run:
+---
 
-### `npm start`
+https://newsspace-project.netlify.app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+The NewsSpace App offers users the following features and functionality:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Articles
 
-### `npm run build`
+- Home page displays article cards containing the title, topic, author, date, number of comments, and number of likes.
+- When article cards are selected, users will be redirected to the article page, displaying the article body, and a list of comments
+- Users can sort articles based on the following criteria:
+  - date
+  - comment count
+  - votes
+  - order (ascending or descending)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Comments
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Comments are displayed in the related article's page.
+- Users are able to post comments in a text box below the article.
+- Users are able to delete comments associated with their own username (a bin icon will be displayed)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Likes
 
-### `npm run eject`
+- Likes are displayed for each article and comment.
+- Users are able to increase or decrease the like count by 1.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Link to repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+https://github.com/OneInfiniteLoops/newsspace.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Installation Instructions
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Minimum version of Node supported - v17.8.0
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Clone the repository by inputting the following in your command line terminal
 
-### Code Splitting
+```
+git clone https://github.com/OneInfiniteLoops/newsspace.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Change to the repository directory.
 
-### Analyzing the Bundle Size
+```
+cd newsspace
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Install all package dependencies.
 
-### Making a Progressive Web App
+```
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Launch the app in your browser.
 
-### Advanced Configuration
+```
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Link to back-end API repository
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://github.com/OneInfiniteLoops/News-API.git
